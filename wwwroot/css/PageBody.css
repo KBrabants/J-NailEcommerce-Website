@@ -1,0 +1,53 @@
+﻿.Page-Body{
+    padding: 10px 0px 0px  0px;
+    margin: 1.2% 5% 0px 16%;
+}
+
+.card {
+    margin: 0px 100px 70px 0px;
+    width: 27%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+.card a {
+        font-size: 40px;
+        font-family: motley-forces;
+        text-decoration: none;
+        text-align: center;
+        padding: 30px 0px 0px 0px;
+        margin: -80px 0px 30px 0px;
+        background-image: linear-gradient(rgba(255,0,0,0) 10%, #BAE8F8 90%);
+        width: 100%
+
+}
+
+    .card p {
+        font-size: 40px;
+        font-family: motley-forces;
+        text-decoration: none;
+        text-align: center;
+        padding: 30px 0px 0px 0px;
+        margin: -80px 0px 30px 0px;
+        background-image: linear-gradient(rgba(255,0,0,0) 10%, #BAE8F8 90%);
+        width: 100%
+    }
+
+.Photo-Link {
+    padding: 0px !important; 
+    margin: 30px 0px 0px 0px !important;
+
+}
+
+.card a:hover {
+    color: hotpink;
+}
+
+.Main-Card-Photo{
+    width: 100%;
+
+}

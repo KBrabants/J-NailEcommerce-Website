@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<link href="~/css/pagebody.css" rel="stylesheet" />
+
+
+<div class="text-center">
+    <h1 class="display-4">Home Page</h1>
+    
+</div>
+
+<div class="Page-Body">
+
+    <div class="card-columns">
+
+        <div class="card">
+            <a class ="Photo-Link" href=""><img class="Main-Card-Photo" src="~/photos/bunny.jpg" /></a>
+            <a class="Card-Text" href=""><abbr title="Mine and your absolute favorite nails">Popular Designs</abbr></a>
+        </div>
+
+        <div class="card">
+            <a class="Photo-Link" href="">
+                <img class="Main-Card-Photo" src="~/photos/bunny.jpg" />
+            </a>
+            <a class="Card-Text" href=""><abbr title="Mine and your absolute favorite nails">Popular Designs</abbr></a>
+        </div>
+
+        <div class="card">
+            <a class="Photo-Link" href="">
+                <img class="Main-Card-Photo" src="~/photos/bunny.jpg" />
+            </a>
+            <a class="Card-Text" href=""><abbr title="Mine and your absolute favorite nails">Popular Designs</abbr></a>
+        </div>
+    </div>
+
+
+
+    @foreach (var item in Model.info)
+    {
+        <div class="card">
+            <a class ="Photo-Link"  href="@item.ProductPage"> <img class="Main-Card-Photo" src="@item.Photo" /></a>
+            <a class="Card-Text" href=""><abbr title="Mine and your absolute favorite nails">@item.Name</abbr></a>
+        </div>
+
+    }
+    
+
+
+</div>
