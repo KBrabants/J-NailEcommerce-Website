@@ -1,0 +1,84 @@
+[
+  {
+    "ProductId": 0,
+    "Name": "Bunny",
+    "Categories": {
+      "categories": [
+        "cute"
+      ]
+    },
+    "Photos": [
+      "/Photos/Bunny.JPG",
+      "/Photos/Bunny.JPG",
+      "/Photos/Bunny.JPG"
+    ],
+    "Price": 25,
+    "TotalSold": 0
+  },
+  {
+    "ProductId": 1,
+    "Name": "Pink",
+    "Categories": {
+      "categories": [
+        "sweet"
+      ]
+    },
+    "Photos": [
+      "https://glaminati.com/wp-content/uploads/2021/07/tp-perfect-pink-nails.jpg",
+      "https://glaminati.com/wp-content/uploads/2021/07/tp-perfect-pink-nails.jpg",
+      "https://glaminati.com/wp-content/uploads/2021/07/tp-perfect-pink-nails.jpg"
+    ],
+    "Price": 20,
+    "TotalSold": 0
+  },
+  {
+    "ProductId": 2,
+    "Name": "Red",
+    "Categories": {
+      "categories": [
+        "sweet"
+      ]
+    },
+    "Photos": [
+      "https://www.shape.com/thmb/0jGR6DJmruYzJ5zWlIt5XZmJhVc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TK-Totally-Doable-Nail-Designs-for-Short-Nails-GettyImages-1093918148-2000-287b0445ec7f4d2db2173bd7a0aca48d.jpg",
+      "https://www.shape.com/thmb/0jGR6DJmruYzJ5zWlIt5XZmJhVc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TK-Totally-Doable-Nail-Designs-for-Short-Nails-GettyImages-1093918148-2000-287b0445ec7f4d2db2173bd7a0aca48d.jpg",
+      "https://www.shape.com/thmb/0jGR6DJmruYzJ5zWlIt5XZmJhVc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TK-Totally-Doable-Nail-Designs-for-Short-Nails-GettyImages-1093918148-2000-287b0445ec7f4d2db2173bd7a0aca48d.jpg"
+    ],
+    "Price": 30,
+    "TotalSold": 0
+  },
+  {
+    "ProductId": 3,
+    "Name": "Leaf",
+    "Categories": {
+      "categories": [
+        "cute",
+        "sweet"
+      ]
+    },
+    "Photos": [
+      "https://thumbs.dreamstime.com/b/tender-neat-manicure-female-hands-background-green-leaves-nail-design-119300219.jpg",
+      "https://thumbs.dreamstime.com/b/tender-neat-manicure-female-hands-background-green-leaves-nail-design-119300219.jpg",
+      "https://thumbs.dreamstime.com/b/tender-neat-manicure-female-hands-background-green-leaves-nail-design-119300219.jpg"
+    ],
+    "Price": 20,
+    "TotalSold": 0
+  },
+  {
+    "ProductId": 4,
+    "Name": "Christmas",
+    "Categories": {
+      "categories": [
+        "cute",
+        "sweet"
+      ]
+    },
+    "Photos": [
+      "https://www.letseatcake.com/wp-content/uploads/2021/10/Christmas-Nail-Designs.jpg",
+      "https://www.letseatcake.com/wp-content/uploads/2021/10/Christmas-Nail-Designs.jpg",
+      "https://www.letseatcake.com/wp-content/uploads/2021/10/Christmas-Nail-Designs.jpg"
+    ],
+    "Price": 20,
+    "TotalSold": 0
+  }
+]

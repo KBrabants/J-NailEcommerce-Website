@@ -1,0 +1,410 @@
+﻿body {
+    overflow-x: hidden;
+}
+.gradient-border {
+    display: block;
+    color: #fff;
+    padding: 3px;
+    width: fit-content;
+    background: linear-gradient(90deg, #b0a0e6, #f8e3fe,#b0a0e6,#f8e3fe);
+    border-radius: 20px;
+    background-size: 200% 200%;
+    animation: change 5s ease-in-out infinite;
+}
+.checkout-container {
+    margin: 0px 0px 0px 15%;
+    background-color: #FFFFFF;
+    border: 15px solid black;
+    border-style: solid;
+}
+.same-line{
+    display: inline-block;
+}
+.add-product {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 5px;
+    width: fit-content;
+    border: 8px solid #e3cfe6;
+    background-color: #fff2fd;
+    overflow: auto;
+    border-radius: 20px;
+}
+.add-product p {
+    font-size: 30px;
+    font-family: motley-forces, Calibri;
+    color: #b0a0e6;
+}
+.product-title {
+    text-shadow: 1px 1px black;
+    color: #b0a0e6 !important;
+    font-family: 'motley-forces';
+    text-align: center;
+    font-size: 7vmin;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+.category{
+    margin: 0px 20px 0px 20px;
+    color: #8d8d8d;
+}
+.custom-title {
+    font-size: 50px;
+    margin: 15px 0px 0px 20px;
+    color: #9757d1;
+    font-family: motley-forces, Calibri;
+    border-bottom: 3px solid #b0a0e6;
+    width: 90%;
+    letter-spacing: 6px;
+}
+table {
+    margin: 0px 10px 20px 10px;
+    border-collapse: collapse;
+}
+tr {
+    border-bottom: 3px solid #b0a0e6;
+}
+select{
+    width: 100%;
+}
+.general-button {
+    transition-duration: 0.4s;
+    color: #b0a0e6;
+    border: 5px solid #b0a0e6;
+    background-color: #fff2fd;
+    border-radius: 10px;
+    font-size: 50px;
+    padding: 10px 30px 10px 30px;
+    text-align: center;
+    float: right;
+    margin: 20px;
+    font-family: motley-forces, Calibri;
+    cursor: pointer;
+}
+    .general-button:hover {
+        color: #ff69b4;
+        border: 10px solid #ff69b4;
+        background-color: #fff2fd;
+        padding: 10px 30px 10px 30px;
+        text-align: center;
+        float: right;
+        margin: 20px;
+        font-family: motley-forces, Calibri;
+    }
+
+.checkout-body {
+    margin: 4.3% 10% 0px 15%;
+}
+.nail-label {
+    font-size: 30px;
+}
+#label-nail-width {
+    margin: 27px 0px 0px;
+}
+#label-nail-length {
+    margin: 58px 0px 0px;
+}
+#label-length {
+    margin: 56px 0px 0px 0px;
+
+}
+#label-style {
+    margin: 56px 0px;
+}
+.nail-choice{
+    font-size: 24px;
+    margin: 30px 0px;
+}
+.left {
+    float: left;
+    width: 30%;
+    display: inline-block;
+}
+.right {
+    float: right;
+    width: 70%;
+    display: inline-block;
+
+}
+.polaroid-area {
+    width: 100%;
+    height: 850px;
+    margin: 0px 0px 0px 1%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    border-bottom: 1vmin dashed #e3cfe6;
+}
+    .polaroid-area .polaroid {
+        position: absolute;
+        width: 80%;
+    }
+.polaroid {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px 10px 100px 10px;
+    margin-bottom: 25px;
+    float: left;
+    display: inline-block;
+    max-width: 1000px;
+    background: linear-gradient(#f5f5f4 90%, #ffffff), url(https://grainy-gradients.vercel.app/noise.svg);
+}
+    .polaroid p {
+        color: #b0a0e6;
+        font-family: 'motley-forces';
+        font-size: 5vmin;
+        text-align: center;
+        top: 50%;
+        margin-bottom: -11%;
+        margin-top: 2%;
+    }
+.polaroid img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid black;
+        display: block;
+    }
+.polaroid:nth-of-type(1) {
+        transform: translate(-20%, 3%) rotate(1deg);
+        transition: transform 800ms cubic-bezier(.2,.99,.55,.95);
+    }
+.polaroid:nth-of-type(2) {
+        transform: translateX(-30%) rotate(-2deg);
+        transition: transform 800ms cubic-bezier(.2,.99,.55,.95);
+    }
+.polaroid:nth-of-type(3) {
+        transform: translateX(-15%) rotate(1deg);
+        transition: transform 800ms cubic-bezier(.2,.99,.55,.95);
+    }
+.polaroid-area:hover > .polaroid[data-status="unused"] {
+    transform: translate(60%, -10%) rotate(-12deg);
+    transition: transform 800ms cubic-bezier(.2,.99,.55,.95);
+}
+.polaroid[data-status="after"]{
+    z-index: 0;
+}
+.polaroid[data-status="unused"] {
+    z-index: 5;
+}
+.polaroid[data-status="active"] {
+    transform: translateX(0%) rotate(2deg);
+    transition: transform 800ms cubic-bezier(.2,.99,.55,.95);
+    z-index: 10;
+}
+.checkout-table p {
+    font-size: 40px;
+    font-family: motley-forces, Calibri;
+    color: #b0a0e6;
+}
+.checkout-table tr{
+    line-height: 80px;
+}
+.checkout-table input {
+    font-size: 30px;
+    font-family: sans-serif;
+    color: #b0a0e6;
+    background-color: white;
+}
+.shopping-cart {
+    margin: 30px 0px 100px 0px;
+    width: 40%;
+    height: fit-content;
+    display: inline-block;
+    float: right;
+}
+.polaroid-cart {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px 10px 10px 10px;
+    margin-bottom: 25px;
+    margin-left: 8%;
+    float: left;
+    width: 60%;
+    max-width: 900px;
+    background-color: white;
+}
+.polaroid-cart img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid black;
+    display: block;
+}
+.extra-margin{
+    margin: 20px 0px 40px 20px;
+}
+.price-table td, th{
+    padding: 10px 90px 10px 6px;
+}
+.price-table td{
+    font-size: 30px;
+}
+.price-table{
+    margin: 20px;
+    border: 8px solid #e1cfe6;
+    border-radius: 6px !important;
+    background-color: white;
+}
+.nails-track {
+    width: 85%;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    transition-duration: 0.4s;
+    z-index:1;
+}
+.more-polaroid {
+    width: 39vmin;
+    display: inline-block;
+    max-width: 900px;
+    margin: 10px;
+    transition-duration: 0.4s;
+}
+.more-polaroid img {
+    width: 90%;
+    height: auto;
+    display: block;
+}
+.more-nails > .left-button {
+    float: left;
+    width: 5%;
+    z-index: 100;
+    width: 5%;
+    color: #ff69b4;
+    padding: 0px;
+    margin: 8% 0px;
+    color: #b0a0e6;
+    border: 5px solid #b0a0e6;
+    background-color: #fff2fd;
+    border-radius: 10px;
+    font-size: 50px;
+    font-family: motley-forces, Calibri;
+    cursor: pointer;
+}
+.more-nails > .right-button {
+    float: right;
+    width: 5%;
+    z-index: 100;
+    margin: 0px;
+    color: #ff69b4;
+    padding: 0px;
+    margin: 8% 0px;
+    color: #b0a0e6;
+    border: 5px solid #b0a0e6;
+    background-color: #fff2fd;
+    border-radius: 10px;
+    font-size: 50px;
+    font-family: motley-forces, Calibri;
+    cursor: pointer;
+}
+.photo-track-container {
+    transition-duration: 0.8s;
+}
+.split{
+    width:50%;
+    display: inline;
+}
+.full{
+    width: 100%;
+}
+
+.nail-shape img {
+    margin-top: 10vmin;
+    height: 30vw;
+    width: 20vw;
+    max-height: 564px;
+    max-width:375px;
+    margin-left: 5vw;
+    background-color: #b0a0e6;
+    border: 10px solid black;
+}
+
+.centered{
+    text-align:center;
+}
+
+
+.cart-item-container {
+    height: 100%;
+    display: flex;
+}
+
+.remove-from-cart {
+    z-index: 1;
+    background-color: white;
+    border: 2px solid #8d8d8d;
+    font-size: 25px;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    margin-top: -30px;
+    cursor: pointer;
+    font-family: 'motley-forces';
+    color: #8d8d8d;
+}
+
+.remove-from-cart:hover {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border-color: #00000000;
+}
+.centered-objects{
+    margin-right: 30%;
+}
+.centered-Title {
+    margin-right: 11%;
+}
+
+.sub-heading {
+    color: #b0a0e6 !important;
+    font-size: 60px !important;
+    text-shadow: 1px 1px black;
+    color: #b0a0e6 !important;
+    font-family: 'motley-forces';
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+
+
+.notice {
+    font-family: 'motley-forces';
+    font-size: 30px;
+    color: rgb(176, 160, 230);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes change {
+    0% {
+            background-position: 0 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0 50%;
+        }
+    }

@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 using MyWebSite.Models;
 using MyWebSite.Services;
+using System.Collections.Generic;
 
 namespace MyWebSite.Pages
 {
@@ -10,7 +12,7 @@ namespace MyWebSite.Pages
         private readonly ILogger<IndexModel> _logger;
         public JsonFileInfoService InfoServices;
 
-        public IEnumerable<Info> info { get; private set; }
+        public IEnumerable<Product> Products { get; private set; }
 
 
         public IndexModel(ILogger<IndexModel> logger, JsonFileInfoService infoService)
@@ -21,7 +23,8 @@ namespace MyWebSite.Pages
 
         public void OnGet()
         {
-            info = InfoServices.GetInfo();
+            Products = InfoServices.GetInfo();
         }
+
     }
 }
