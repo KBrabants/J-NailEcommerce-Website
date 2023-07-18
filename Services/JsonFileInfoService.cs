@@ -19,33 +19,23 @@ namespace MyWebSite.Services
 
         public string JsonFileName
         {
-            get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "Information.json"); }
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "Products.json"); }
         }
 
-        public IEnumerable<Info> GetInfo() 
-        { 
-          using (var jsonFileReader = File.OpenText(JsonFileName))
-            {
-                return JsonSerializer.Deserialize<Info[]>(jsonFileReader.ReadToEnd(), new JsonSerializerOptions{PropertyNameCaseInsensitive = true, })!;
-            }
-        }
-
-        public void AddRating(int productID, int rating)
+        public IEnumerable<Product> GetInfo()
         {
-            var products = GetInfo();
-            var quert = products.First(x => x.id == productID);
-
-            if( quert == null ) 
-            { 
-                quert.Ratings = new int[] { rating };
-            }
-            else
-            {
-                var ratings = quert.Ratings.ToList();
-                ratings.Add(rating);
-                quert.Ratings = ratings.ToArray();
-            }
+            string json = File.ReadAllText(JsonFileName);
+            return JsonSerializer.Deserialize<Product[]>(json);
         }
 
+        public string Categories
+        {
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "Categories.json"); }
+        }
+        public IEnumerable<string> GetCategories()
+        {
+            string json = File.ReadAllText(Categories);
+            return JsonSerializer.Deserialize<string[]>(json);
+        }
     }
 }

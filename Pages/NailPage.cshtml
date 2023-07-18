@@ -1,0 +1,124 @@
+﻿@page "{product?}"
+@using MyWebSite.Models;
+@model MyWebSite.Pages.NailPageModel
+@{
+}
+
+<link href="~/css/checkout.css" rel="stylesheet" />
+<script src="~/js/nailpage.js"></script>
+
+<div class="checkout-body">
+
+<div onclick="cardSelector()" class="polaroid-area">
+
+        <div class="polaroid" data-index="3" data-status="active">
+            <img src="@Model.PageProduct.Photos[0]" />
+            <p>Click Me</p>
+        </div>
+
+        <div class="polaroid" data-index="2" data-status="inactive">
+            <img src="@Model.PageProduct.Photos[1]" />
+        </div>
+
+        <div class="polaroid" data-index="1" data-status="unused">
+            <img src="@Model.PageProduct.Photos[2]" />
+        </div>
+
+
+</div>
+<br />
+<div class="centered">
+        <h1 class="product-title">@Model.PageProduct.Name - $@Model.PageProduct.Price</h1><br />
+
+        @foreach(string category in Model.PageProduct.Categories.categories)
+        {
+            <span class="category">@category </span>
+        }
+</div>
+<br />
+<div class="same-line full">
+        <div class="gradient-border same-line">
+            <div class="add-product">
+                <h1 class="custom-title">Customize Your Nail!</h1><br />
+                <form asp-page="nailpage">
+                    <table>
+                        <tr>
+                            <td><p>Your Index Nail Width (mm):</p></td>
+                            <td><input class="nail-choice" type="number" asp-for="Input.NailItem.CustomerWidth" max="40" min="0" required /></td>
+                        </tr>
+                        <tr>
+                            <td><p>Your Nail Length (mm):</p></td>
+                            <td><input class="nail-choice" type="number" asp-for="Input.NailItem.CustomerLength" max="80" min="0" required /></td>
+                        </tr>
+                        <tr>
+                            <td><p>Choose Press-on length:</p></td>
+                            <td>
+                                <select class="nail-choice" asp-for="Input.NailItem.PressOnLength">
+                                    <option value="short">Short</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="long">Long</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Choose Press-on style:</p></td>
+                            <td>
+                                <select onchange="changeNail()" class="nail-choice" asp-for="Input.NailItem.PressOnStyle" id="style">
+                                    <option value="natural">Natural</option>
+                                    <option value="rounded">Rounded</option>
+                                    <option value="square">Square</option>
+                                    <option value="roundedSquare">Rounded Square</option>
+                                    <option value="stilleto">Stilleto</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Quantity (In Sets):</p></td>
+                            <td><input class="nail-choice" type="number" asp-for="Input.NailItem.Sets" max="20" min="0" value="1" required /></td>
+                            <input type="hidden" asp-for="Input.NailItem.ProductId" value="@Model.PageProduct.ProductId" required />
+                        </tr>
+                    </table>
+                    <button class="general-button" type="submit">Add To Cart</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="split same-line">
+
+            <div class="nail-shape same-line">
+                <img id="visual-nail" class="visual-nail" style="border-radius: 50% 50% 50% 50% / 75% 75% 25% 25%" />
+            </div>
+        </div>
+</div>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <h1 class="product-title" id="temp" >You Might Like:</h1><br />
+
+<div class="more-nails">
+
+        <button onclick="moveTrack(-1)" class="left-button"><</button>
+        <button onclick="moveTrack(1)" class="right-button">></button>
+        <div class="nails-track">
+
+            <div class="photo-track-container" id="track-slider" style="transform: translateX(0%)">
+
+                @foreach(Product product in Model.SimilarProducts)
+                {
+                    <div class="more-polaroid">
+                        <img src="@product.Photos[0]" />
+                    </div>
+                }
+            </div>
+        </div>
+
+</div>
+
+</div>

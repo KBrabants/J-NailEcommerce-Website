@@ -6,46 +6,66 @@
 <link href="~/css/pagebody.css" rel="stylesheet" />
 
 
-<div class="text-center">
-    <h1 class="display-4">Home Page</h1>
-    
+@section PageIntro{
+  <div class="announcer-bar">
+      <p>Free Shipping Over 80$</p>
+  </div>
+  <div class="intro-grid">
+        <img class="page-header-image" src="~/photos/bunny.jpg" />
+        <p class="intro-site-name">Jayda's Nails</p>
+        <p class="intro-subtext">New Styles Every Month!</p>
+
+        <a href="#main-header" class="intro-view-store">View Store!</a>
+  </div>
+}
+
+@*Make Groups Of Nails. Sort Them With Titles and scroll when they pick a category*@
+
+<div class="section-header hidden" id="slide-in">
+    <h1 class="section-title">Choose a Style</h1>
+    <p class="section-sub-title">Then customize the nail to fit your look!</p>
 </div>
+<div class="dotted-bottom"></div>
 
-<div class="Page-Body">
+<div class="Page-Body" id="shopping-items">
+    <h1 class="section-title nail-title">All Styles</h1>
+    <p class="section-sub-title">Click a style you like to customize</p>
+    <br />
+    <ul class="Nails-Container">
 
-    <div class="card-columns">
-
-        <div class="card">
-            <a class ="Photo-Link" href=""><img class="Main-Card-Photo" src="~/photos/bunny.jpg" /></a>
-            <a class="Card-Text" href=""><abbr title="Mine and your absolute favorite nails">Popular Designs</abbr></a>
-        </div>
-
-        <div class="card">
-            <a class="Photo-Link" href="">
-                <img class="Main-Card-Photo" src="~/photos/bunny.jpg" />
-            </a>
-            <a class="Card-Text" href=""><abbr title="Mine and your absolute favorite nails">Popular Designs</abbr></a>
-        </div>
-
-        <div class="card">
-            <a class="Photo-Link" href="">
-                <img class="Main-Card-Photo" src="~/photos/bunny.jpg" />
-            </a>
-            <a class="Card-Text" href=""><abbr title="Mine and your absolute favorite nails">Popular Designs</abbr></a>
-        </div>
-    </div>
-
-
-
-    @foreach (var item in Model.info)
+    @foreach (var item in Model.Products)
     {
-        <div class="card">
-            <a class ="Photo-Link"  href="@item.ProductPage"> <img class="Main-Card-Photo" src="@item.Photo" /></a>
-            <a class="Card-Text" href=""><abbr title="Mine and your absolute favorite nails">@item.Name</abbr></a>
-        </div>
+           
+        <li>
+                <a href="/nailpage/@item.Name">
+                <div class="Product-Card">
+                 <img class="Product-Photo" src="@item.Photos[0]" />
+                 <p class="title">@item.Name</p>
+                 <p class="price">$@item.Price</p>
+                    </div>
+                </a>
 
+        </li>
+           
     }
-    
 
+    </ul>
 
 </div>
+
+
+<script>
+    const callback = function (entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target)
+            }
+        });
+    }
+    const observer = new IntersectionObserver(callback);
+    const targets = document.querySelectorAll('.hidden');
+    targets.forEach(target => {
+        observer.observe(target);
+    })
+</script>

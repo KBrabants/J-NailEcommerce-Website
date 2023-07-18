@@ -1,0 +1,117 @@
+﻿@page 
+@model MyWebSite.Pages.CheckoutModel
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+
+
+@using System.ComponentModel.DataAnnotations;
+@using MyWebSite.Models;
+
+<link href="~/css/checkout.css" rel="stylesheet" />
+<div class="checkout-body">
+@if (Model.HasEmptyCart)
+{
+        <h1 class="product-title centered-Title">Cart Empty Bozo</h1>
+
+        <div class="centered-objects">
+            <a style="text-decoration:none" class="general-button" href="/">Back To Home</a> <a style="text-decoration:none" class="general-button" href="/nails/popular">View Popular Nails!</a>
+        </div>
+}
+else
+{
+
+        @for (int i = 0; i < Model.cart.NailItems.Count; i++)
+        {
+            var cartItem = Model.cart.NailItems[i];
+
+            <div class="cart-item-container">
+
+                <div class="polaroid-cart">
+                    <img src="@Model.Products[i].Photos[0]" />
+                    <p class="cart-specs">Your Width (cm): @cartItem.CustomerWidth</p>
+                    <p class="cart-specs">Your Height (cm): @cartItem.CustomerLength</p>
+                    <p class="cart-specs">Size: @cartItem.PressOnLength</p>
+                    <p class="cart-specs">Style: @cartItem.PressOnStyle</p>
+                    <p class="cart-specs">Quantity: @cartItem.Sets</p>
+                    <p class="cart-specs">Price: $@(Model.Products[i].Price * cartItem.Sets)</p>
+                </div><br />
+
+                <form asp-page="checkout" method="post">
+                    <input type="hidden" asp-for="RemoveIndex" value="@i" />
+                    <button asp-page-handler="RemoveItem" class="remove-from-cart">X</button>
+                </form>
+
+            </div>
+
+        }
+
+
+        <h1 class="same-line product-title" id="title">Checkout</h1>
+
+        <div class="shopping-cart">
+            <br/>
+
+            <div class="same-line">
+                @if (!Model.cart.FreeShipping)
+                {
+                    <h4 class="sub-heading" id="title">Cart Total: <span style="color:hotpink;">$@(Model.cart.TotalPrice - 5)</span></h4>
+                    <p class="notice same-line"><span style="color:hotpink; font-size: 40px;">$@(Model.FreeShippingMinimum - Model.cart.TotalPrice + Model.CookieCart.ShippingCost)</span> more until free shipping!</p>
+                }
+                else
+                {
+                    <p class="notice same-line"><span style="color:hotpink; font-size: 40px;">Free Shipping!</span> </p>
+                }
+            </div>
+            <br/>
+            <p style="margin-bottom: 2vh;" class="same-line category">Please ensure items are correct</p> <br />
+
+
+            <h4 class="sub-heading" id="title">Total Price: <span style="color:hotpink;">$@(Model.cart.TotalPrice)</span></h4>
+            <p class="category same-line">$5 added for shipping</p>
+
+
+        </div>
+        <div><a class="button general-button" href="/Home/PaymentWithPayPal">Check Out</a></div>
+        
+@*
+                <form asp-page="checkout">
+                   <table class="checkout-table">
+                        <tr>
+                            <td><p>First Name:</p></td>
+                            <td><input asp-for="input.fname" name="fname" placeholder="First Name" /></td>
+                        </tr>
+                        <tr>
+                            <td><p>Last Name:</p></td>
+                            <td><input asp-for="input.lname" name="lname" placeholder="Last Name" /></td>
+                        </tr>
+                        <tr>
+                            <td><p>Phone Number:</p></td>
+                            <td><input asp-for="input.PhoneNumber" name="PhoneNumber" placeholder="1(561)111-1111" /></td>
+                        </tr>
+                        <tr>
+                            <td><p>Email Address:</p></td>
+                            <td><input asp-for="input.email" name="email" placeholder="email@mail.com" /></td>
+                        </tr>
+                        <tr>
+                            <td><p>Street Address:</p></td>
+                            <td><input asp-for="input.street" name="street" placeholder="street" /></td>
+                        </tr>
+                        <tr>
+                            <td><p>Your City:</p></td>
+                            <td><input asp-for="input.city" name="city" placeholder="Tampa" /></td>
+                        </tr>
+                        <tr>
+                            <td><p>Your State:</p></td>
+                            <td><input asp-for="input.state" name="state" placeholder="Florida"></td>
+                        </tr>
+                        <tr>
+                            <td><p>Zip Code:</p></td>
+                            <td><input asp-for="input.zip" name="zip" placeholder="33581" /></td>
+                        </tr>
+                    </table>
+                </form>*@
+
+}
+</div>

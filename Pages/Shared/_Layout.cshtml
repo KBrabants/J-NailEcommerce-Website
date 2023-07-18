@@ -7,116 +7,76 @@
     <meta keywords="Press On Nails, Pressons, Nails, Custom Nails, Jaydas Nails, Nails, Cheap Nails" />
     <title>Jayda's Nails - @ViewData["Title"]</title>
     <link href="~/css/site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-    @*This defines the header layout*@
-    <header class="Main-Header">
-        <div class="Main-Header-Body">
-            <a class="Title" href="https://localhost:7283/">Jayda&#39s nails!</a>
+    <environment include="Testing,Staging,Development">
+        <div class="warning"><h1>You are currently in a testing environment</h1></div>
 
-        @*<input type="text" placeholder="Search..">*@
+    </environment>
+
+    @RenderSection("PageIntro", required: false)
+
+    <header class="Main-Header" id="main-header">
+        <div class="Main-Header-Body same-line">
+
+            <div class="title-container same-line">
+                <a class="Title same-line" id="title" href="/">My nails!</a>
+                <a id="upperCheckout" class="checkout-icon header-section same-line" href="/checkout">Chec</a>
+            </div>
 
 
+            <div class="nav-links same-line">
+
+                <div class="dropdown same-line">
+                <p class="same-line dropbtn header-section">Category<span class="drop-v"> v</span></p>
+                <div class="dropdown-content">
+                <a href="/nails/popular">Popular Designs</a>
+                <a href="/nails/classic">Classic Designs</a>
+                <a href="/nails/anime">Anime</a>
+                <a href="/nails/animals">Cute Animals</a>
+                <a href="/nails/cute">Cute Nails</a>
+                </div>
+                </div>
+
+              <div class="dropdown same-line">
+                    <p class="same-line dropbtn header-section">Color<span class="drop-v"> v</span></p>
+                 <div class="dropdown-content">
+                    <a href="/nails/white">White</a>
+                        <a href="/nails/black" >Black</a>
+                        <a href="/nails/pink" style="color:deeppink">Pink</a>
+                        <a href="/nails/purple" style="color:mediumpurple">Purple</a>
+                        <a href="/nails/blue" style="color:mediumblue">Blue</a>
+                        <a href="/nails/green" style="color:green">Green</a>
+                        <a href="/nails/yellow" style="color:#CCD200">Yellow</a>
+                   </div>
+                 </div>
+            </div>
+
+            <div class="dropdown same-line">
+                <p class="same-line dropbtn header-section">Social Media<span class="drop-v"> v</span></p>
+                <div class="dropdown-content">
+                    <a href="https://instagram.com/jaydafrog?igshid=MzRlODBiNWFlZA==">Instagram</a>
+                    <a href="https://www.tiktok.com/@@jaydaluvdabi?_t=8dMdNu9N3CU&_r=1">TikTok</a>
+                    <a href="/nails/black">Whatever Else</a>
+                    <a href="/nails/black">1 more?</a>
+                </div>
+            </div>
         </div>
+
+
+        <a id="lowerCheckout" class="checkout-icon header-section" href="/checkout">Chec</a>
+
     </header>
 
-    @* This defines the sidebar *@
-    <div class="Main-Side-Bar">
-        @*Popular Designs*@
-        <a href="">
-        <div class="Side-Card">
-            <img class="Card-Photo" src="~/photos/bunny.jpg" />
-            <a class="Side-Item" href=""><abbr title="Mine and your absolute favorite nails">Popular Designs</abbr></a>
-            </div><br />
-        </a>
-        @*Classic Nails*@
-        <a href="">
-        <div class="Side-Card">
-            <img class="Card-Photo" src="~/photos/bunny.jpg" />
-            <a class="Side-Item" href=""><abbr title="For those with a fancier taste in nails">Classic Nails</abbr></a>
-            </div>
-        </a>
-        @*Anime Nails*@
-        <a href="">
-        <div class="Side-Card">
-            <img class="Card-Photo" src="~/photos/bunny.jpg" />
-            <a class="Side-Item" href=""><abbr title="Yes... pokemon is my favorite anime :)">Anime</abbr></a>
-            </div><br />
-        </a>
-        @*Video Game Nails*@
-        <a href="">
-        <div class="Side-Card">
-            <img class="Card-Photo" src="~/photos/bunny.jpg" />
-            <a class="Side-Item" href=""><abbr title="Cute and Cool Video game designs from my favorite personal collection of characters">Video games</abbr></a>
-            </div><br />
-        </a>
-        @*Cute Animal Nails*@
-        <a href="">
-        <div class="Side-Card">
-            <img class="Card-Photo" src="~/photos/bunny.jpg" />
-            <a class="Side-Item" href=""><abbr title="Our favorite cutesy animal desings">Cute Animals</abbr></a>
-            </div><br />
-        </a>
-        @*Custom Nail*@
-        <a href="">
-        <div class="Side-Card">
-            <img class="Card-Photo" src="~/photos/bunny.jpg" />
-            <a class="Side-Item" href=""><abbr title="Want custom nail art? Great for cosplay!">Custom Nail Request</abbr></a>
-            </div><br />
-        </a>
-        @*Blog Pages*@
-        <div class="Side-Card">
-            <h3 class="Side-Header" href="">My Blog Pages</h3>
-            <div class="Side-Items">
-                @*Social Links*@
-                <a class="Side-Item" href="/">How I started...</a><br />
-                <a class="Side-Item" href="">More about me!</a><br />
-                <a class="Side-Item" href="">My favorite animals!</a><br />
-                <a class="Side-Item" href="">What will I do next?</a><br />
-            </div>
-        </div><br />
-        @*Follow Me*@
-        <div class="Side-Card">
-            <h3 class="Side-Header" href="">Follow Me!</h3>
-            <div class="Side-Items">
-            @*Social Links*@
-                <a class="Side-Item" href="">Tik Tok</a><br />
-                <a class="Side-Item" href="">Instagram</a><br />
-                <a class="Side-Item" href="">Twitter</a><br />
-                <a class="Side-Item" href="">Facebook</a><br />
-                <a class="Side-Item" href="">Snapchat</a><br />
-                <a class="Side-Item" href="">Reddit</a><br />
-        </div>
-        </div><br />
-        @*Logo or whatevs*@
-        <div class ="Side-Card">
-            <img class="Side-Photo" src="~/photos/bunny.jpg" alt="This is supposed to be my logo..." />
-        </div><br />
-        
-
-    </div>
-
-
-
-
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="">
             @RenderBody()
         </main>
     </div>
 
-@*    <footer class="Main-Footer">
-        <div class ="bottom-page-info">
-            <h3 class"Footer-Title">Contact Me</h3>
-            <a class"footer-link">Email</a>
-            <a class"footer-link">Instagram</a>
-            <a class"footer-link">Twitter</a>
-        </div>
-
-    </footer>*@
-
-    @await RenderSectionAsync("Scripts", required: false)
-
 </body>
+
+
 </html>

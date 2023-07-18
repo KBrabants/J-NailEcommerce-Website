@@ -1,53 +1,219 @@
-﻿.Page-Body{
-    padding: 10px 0px 0px  0px;
-    margin: 1.2% 5% 0px 16%;
+﻿html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
-
-.card {
-    margin: 0px 100px 70px 0px;
-    width: 27%;
-    float: left;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.announcer-bar{
+    width: 100%;
+    background-color: #e3cfe6;
+    padding: 2px;
+}
+.announcer-bar p {
+        font-size: 2vmin;
+        text-align: center;
+        font-family: 'motley-forces';
+        color: #b44ed1;
+        
+    }
+.intro-grid {
+    position: relative;
     text-align: center;
-
+    color: white;
+}
+.intro-grid .intro-site-name {
+        color: #c7baee;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 6vmin;
+        font-family: 'motley-forces';
+    }
+.intro-view-store {
+    position: absolute;
+    transition-duration: 0.4s;
+    color: #b0a0e6;
+    border: 0.5vmin solid #b0a0e6;
+    background-color: #fff2fd;
+    border-radius: 1vmin;
+    font-size: 3vmin;
+    padding: 1vmin 1vmin 1vmin 1vmin;
+    text-align: center;
+    float: right;
+    font-family: motley-forces, Calibri;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.card a {
-        font-size: 40px;
-        font-family: motley-forces;
-        text-decoration: none;
-        text-align: center;
-        padding: 30px 0px 0px 0px;
-        margin: -80px 0px 30px 0px;
-        background-image: linear-gradient(rgba(255,0,0,0) 10%, #BAE8F8 90%);
-        width: 100%
 
+.intro-grid .intro-subtext {
+        color: #fef2fd;
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.5vmin;
+        font-family: 'motley-forces';
+}
+.page-header-image {
+        margin-bottom: 6vmin;
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        display: block;
+        display: block;
+        height: 78vmin;
+    }
+p.sub {
+    position: relative;
+    margin: 0% 0px 0px 0px;
+    font-size: 50px;
+    font-family: 'motley-forces';
 }
 
-    .card p {
-        font-size: 40px;
-        font-family: motley-forces;
-        text-decoration: none;
-        text-align: center;
-        padding: 30px 0px 0px 0px;
-        margin: -80px 0px 30px 0px;
-        background-image: linear-gradient(rgba(255,0,0,0) 10%, #BAE8F8 90%);
-        width: 100%
+.Page-Body {
+    padding: 0px 0px 10% 10%;
+    border-radius: 33px;
+    border-top: 0px solid black;
+    padding-top: 2vmin;
+    margin: 2vmin;
+}
+
+.Nails-Container {
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    gap: 6vmin 3%;
+    flex-wrap: wrap;
+}
+
+.Product-Card {
+    color: #8469d4;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 5px 5px 0px 5px;
+    margin-bottom: 25px;
+    float: left;
+    display: inline-block;
+    width: 45vmin;
+    max-width: 1000px;
+    aspect-ratio: 18/16;
+    background: linear-gradient(#f5f5f4 90%, #ffffff), url(https://grainy-gradients.vercel.app/noise.svg);
+    transition-duration: 0.4s;
+}
+.Product-Card p {
+        display: inline-block;
+    }
+.Product-Card .price {
+        float: right;
+        font-size: 3vmin;
+        font-family: motley-forces, Arial;
+        text-align: left;
+        margin-top: 10px;
+}
+.Product-Card .title {
+        float: left;
+        font-size: 3vmin;
+        font-family: motley-forces, Arial;
+        text-align: left;
+        margin-top: 10px;
+}
+
+.Product-Photo {
+    width: 100%;
+    height: 90%;
+}
+
+.Nails-Container a :hover > .Product-Photo {
+    opacity: 80%;
+}
+
+.Nails-Container a :hover {
+    color: hotpink;
+    border-color: hotpink;
+}
+
+.section-header {
+    text-align: center;
+    display: block;
+    transition: all 1.6s;
+    padding-bottom: 3vmin;
+}
+
+.dotted-bottom {
+    padding-bottom: 2vmin;
+    margin-bottom: 1vmin;
+    border-bottom: 1vmin dotted #b0a0e6;
+    transition: 0s;
+}
+
+.section-title {
+    font-size: 8vmin;
+    font-family: 'motley-forces';
+    letter-spacing: 0.5vw;
+}
+
+.section-sub-title {
+    font-size: 2vmin;
+    color: #7e7e7e
+}
+
+.hidden {
+    color: #00000000;
+    margin-left: -120vw;
+    margin-top: 30vmin;
+    margin-bottom: 15vmin;
+}
+.show {
+    margin-left: 0vw !important;
+    margin-bottom: 15vmin;
+    color: #000000;
+}
+
+.nail-title {
+    color: #b0a0e6;
+    font-family: motley-forces, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px black;
+}
+
+@media only screen and (max-width: 2069px) {
+/*    body {
+        background-color: lightblue;
+    }*/
+
+    .Product-Card {
+        width: 40vw;
+        max-width: 1000px;
+        aspect-ratio: 18/16;
+        padding: 5px 5px 0px 5px;
     }
 
-.Photo-Link {
-    padding: 0px !important; 
-    margin: 30px 0px 0px 0px !important;
-
+    .Page-Body {
+        padding: 0px 0px 5% 0vw;
+        border-radius: 33px;
+        padding-top: 2vmin;
+    }
+}
+@media only screen and (max-width: 800px) {
+/*    body {
+        background-color: lightpink;
+    }*/
 }
 
-.card a:hover {
-    color: hotpink;
-}
+@media only screen and (max-width: 530px) {
+/*    body {
+        background-color: lightgreen;
+    }*/
 
-.Main-Card-Photo{
-    width: 100%;
-
+    .Product-Card {
+        width: 70vw;
+        max-width: 700px;
+        aspect-ratio: 18/16;
+        padding: 5px 5px 0px 5px;
+    }
 }
