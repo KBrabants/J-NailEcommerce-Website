@@ -5,4 +5,3 @@ Baseplate for my ecommerce page.
 
 This code base may be used as example code, I am very happy to share my progress and teach others.
 
-NOTE: the main branch is an older version, please look at second branch
