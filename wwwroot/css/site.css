@@ -15,20 +15,16 @@ body {
 }
 .Main-Header {
     width: 98.5vw;
-    height: 6vw;
     padding: 0px 0px 0px 0px;
     background-color: #fef6ffff;
     border: 10px solid #b0a0e6;
     border-radius: 0px 0px 40px 40px;
-    position: -webkit-sticky; /* for Safari users */
-    position: sticky;
     z-index: 100;
     box-shadow: 2.0px 10.0px 8.0px hsl(0deg 0% 0% / 0.22);
     top: 0.5px;
 }
 .Main-Header-Body {
     padding: 0.5% 0% 0px 1%;
-    border-radius: 5px;
 }
 
 .Main-Header-Body a{
@@ -115,17 +111,33 @@ body {
 }
 
 .checkout-icon {
+    position: relative;
     display: inline;
     color: #b0a0e6;
+    width: 5vw;
+    height: 8vh;
+    aspect-ratio: unset;
+    pointer-events: none;
+    transform: translate(0px, 17px);
+    margin-top: 1vw;
 }
 #upperCheckout {
     visibility: hidden;
-    font-size: 0px;
+    width: 0px;
 }
+#lowerCheckout{
+    padding-left: 15vw;
+}
+
+.first-link {
+    padding-left: 5vw;
+}
+
 @media only screen and (max-width: 2069px) {
     body {
         overflow-x: hidden;
     }
+
     .nav-links {
         margin-left: 0vmin;
     }
@@ -137,11 +149,15 @@ body {
     }
     #lowerCheckout {
         visibility: visible;
+        transform: translate(0px, 9px);
+        width: 5vw;
+        height: 8vh;
+        padding-left: 2vw;
     }
 
     #upperCheckout {
         visibility: hidden;
-        font-size: 0px;
+        height: 0vh;
     }
     .Main-Header {
         height: 8vw;
@@ -155,9 +171,24 @@ body {
 
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1500px) {
+
+    #lowerCheckout {
+        visibility: visible;
+        transform: translate(0px, 9px);
+        width: 5vw;
+        height: 5vh;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
     body{
         overflow-x:hidden;
+    }
+    .Main-Header {
+        position: -webkit-sticky; /* for Safari users */
+        position: sticky;
     }
     .nav-links {
         margin-left: 0vmin;
@@ -167,12 +198,9 @@ body {
         letter-spacing: 0px;
     }
     #lowerCheckout {
-        visibility: hidden;
-        font-size: 5vw;
-    }
-    #upperCheckout {
         visibility: visible;
-        font-size: 5vw;
+        height: 5vh;
+        width: 8vw;
     }
     .title-container {
         display: block !important;
@@ -198,12 +226,14 @@ body {
         letter-spacing: 0px;
     }
     #lowerCheckout {
-        visibility: hidden;
-        font-size: 0px;
+        height: 0vh;
+        width: 0vw;
     }
     #upperCheckout {
         visibility: visible;
-        font-size: 5vw;
+        height: 3vh;
+        width: 10vw;
+        transform: translate(25vw, 5px);
     }
     .title-container {
         display: block !important;
@@ -216,5 +246,8 @@ body {
     .header-section {
         letter-spacing: 0px;
         font-size: 6.2vw;
+    }
+    .first-link {
+        padding-left: 0vw;
     }
 }

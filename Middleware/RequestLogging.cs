@@ -32,6 +32,11 @@ namespace MyWebSite.Middleware
                 
             }
 
+            //if(context.Response.StatusCode != 404)
+            //{
+                _logger.LogInformation(context.Response.ToString());
+           // }
+
         }
 
     }

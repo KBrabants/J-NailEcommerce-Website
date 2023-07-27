@@ -8,6 +8,13 @@
       <SuppressDockerTargets>True</SuppressDockerTargets>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Remove="Pages\NewFolder\**" />
+      <Content Remove="Pages\NewFolder\**" />
+      <EmbeddedResource Remove="Pages\NewFolder\**" />
+      <None Remove="Pages\NewFolder\**" />
+    </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
@@ -19,10 +26,6 @@
     <PackageReference Include="PayPal" Version="1.9.1" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
 
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\NewFolder\" />
   </ItemGroup>
 
 </Project>

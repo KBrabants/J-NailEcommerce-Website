@@ -54,37 +54,41 @@ builder.Services.AddHsts(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+//// Configure the HTTP request pipeline.
+//if (!app.Environment.IsDevelopment())
+//{
+//    app.UseExceptionHandler("/Error");
+//    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+//    app.UseHsts();
+//}
+//else
+//{
+//    app.UseDeveloperExceptionPage();
+//}
+
+
+
+app.UseMiddleware<RequestLogging>();
+
+
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
+    app.UseDeveloperExceptionPage();
 
-
-
-
-if (!app.Environment.IsDevelopment())
-{
     // Used
-    app.Environment.WebRootPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) +"/var/MyApp/wwwroot";
+    app.Environment.WebRootPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) +"/wwwroot";
+    app.Environment.ContentRootPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 
-    app.UseHttpsRedirection();
+    app.UsePathBase("/var/MyApp");
     app.UseStaticFiles(new StaticFileOptions
     {
-        RequestPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)
+        RequestPath = "/var/MyApp"
     });
-    app.UsePathBase(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
-
-    app.UseExceptionHandler("/error");
 }
 else
 {
-    app.UseStaticFiles(new StaticFileOptions
-    {
-        RequestPath = ""
-    });
+    app.UseStaticFiles();
+
     app.UsePathBase("/");
 }
 
@@ -92,7 +96,6 @@ app.MapControllerRoute(
 name: "default",
 pattern: "{controller=Home}/{action=Index}");
 app.UseSession();
-
 
 app.UseRouting();
 

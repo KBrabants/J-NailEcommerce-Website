@@ -22,12 +22,20 @@
         <div class="Main-Header-Body same-line">
 
             <div class="title-container same-line">
-                <a class="Title same-line" id="title" href="/">My nails!</a>
-                <a id="upperCheckout" class="checkout-icon header-section same-line" href="/checkout">Chec</a>
+
+
+                <a class="Title same-line" id="title" href="/">My Nails!</a>
+
+
+                <a style="display:inline-block;" href="/checkout">
+                        <object id="upperCheckout" class="checkout-icon" type="image/svg+xml" data="~/Photos/shop-basket.svg"> </object>
+                </a>
+
+
             </div>
 
 
-            <div class="nav-links same-line">
+            <div class="first-link nav-links same-line">
 
                 <div class="dropdown same-line">
                 <p class="same-line dropbtn header-section">Category<span class="drop-v"> v</span></p>
@@ -65,8 +73,13 @@
             </div>
         </div>
 
+        @if (ViewData["Title"] != "Checkout")
+        {
+            <a style="display:inline-block;" href="/checkout">
+                <object id="lowerCheckout" class="checkout-icon" type="image/svg+xml" data="~/Photos/shop-basket.svg"> </object>
+            </a>
 
-        <a id="lowerCheckout" class="checkout-icon header-section" href="/checkout">Chec</a>
+        }
 
     </header>
 
