@@ -51,7 +51,17 @@ body {
 .dropbtn {
     cursor: pointer;
 }
+.cart-text {
+    text-decoration: none;
+    border-bottom-width: 0px !important;
+    bottom: 0;
+    display: inline;
+    color: #b0a0e6 !important;
+    margin-right: 1vw;
+    font-size: 2.5vw;
+    font-family: motley-forces, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+}
 .dropdown-content a {
     color: #52408f;
     padding: 12px 16px;
@@ -118,26 +128,34 @@ body {
     height: 8vh;
     aspect-ratio: unset;
     pointer-events: none;
-    transform: translate(0px, 17px);
+    transform: translate(0px, 13px);
     margin-top: 1vw;
 }
 #upperCheckout {
     visibility: hidden;
     width: 0px;
 }
-#lowerCheckout{
-    padding-left: 15vw;
+#lowerCheckout {
 }
 
 .first-link {
     padding-left: 5vw;
 }
-
+.cart-link {
+    display: inline-block;
+    margin-left: 5vw;
+    text-decoration: none;
+}
 @media only screen and (max-width: 2069px) {
     body {
         overflow-x: hidden;
     }
-
+    .cart-text{
+        font-size:0px;
+    }
+    .cart-link {
+        margin-left: 0vw;
+    }
     .nav-links {
         margin-left: 0vmin;
     }
@@ -231,9 +249,10 @@ body {
     }
     #upperCheckout {
         visibility: visible;
-        height: 3vh;
-        width: 10vw;
-        transform: translate(25vw, 5px);
+        height: 3.5vh;
+        width: 8vw;
+        margin-left: 25vw;
+        transform: translate(0vw, 5px);
     }
     .title-container {
         display: block !important;

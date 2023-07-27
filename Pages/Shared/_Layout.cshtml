@@ -26,13 +26,14 @@
 
                 <a class="Title same-line" id="title" href="/">My Nails!</a>
 
-
-                <a style="display:inline-block;" href="/checkout">
+                @if (ViewData["Title"] != "Checkout")
+                {
+                    <a style="display:inline-block;" href="/checkout">
                         <object id="upperCheckout" class="checkout-icon" type="image/svg+xml" data="~/Photos/shop-basket.svg"> </object>
-                </a>
-
-
+                    </a>
+                }
             </div>
+
 
 
             <div class="first-link nav-links same-line">
@@ -75,7 +76,9 @@
 
         @if (ViewData["Title"] != "Checkout")
         {
-            <a style="display:inline-block;" href="/checkout">
+
+            <a class="cart-link" href="/checkout">
+                <p class="cart-text">Checkout: </p>
                 <object id="lowerCheckout" class="checkout-icon" type="image/svg+xml" data="~/Photos/shop-basket.svg"> </object>
             </a>
 

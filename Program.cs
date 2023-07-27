@@ -68,29 +68,29 @@ var app = builder.Build();
 
 
 
-app.UseMiddleware<RequestLogging>();
+//app.UseMiddleware<RequestLogging>();
 
 
-if (!app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
+//if (!app.Environment.IsDevelopment())
+//{
+//    app.UseDeveloperExceptionPage();
 
-    // Used
-    app.Environment.WebRootPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) +"/wwwroot";
-    app.Environment.ContentRootPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+//    // Used
+//    app.Environment.WebRootPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) +"/wwwroot";
+//    app.Environment.ContentRootPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 
-    app.UsePathBase("/var/MyApp");
-    app.UseStaticFiles(new StaticFileOptions
-    {
-        RequestPath = "/var/MyApp"
-    });
-}
-else
-{
+//    app.UsePathBase("/var/MyApp");
+//    app.UseStaticFiles(new StaticFileOptions
+//    {
+//        RequestPath = "/var/MyApp"
+//    });
+//}
+//else
+//{
     app.UseStaticFiles();
 
-    app.UsePathBase("/");
-}
+    //app.UsePathBase("/");
+//}
 
 app.MapControllerRoute(
 name: "default",
